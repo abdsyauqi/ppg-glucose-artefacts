@@ -1,0 +1,55 @@
+\begin{table}[htbp]\centering\small
+\caption{Leave-one-subject-out (LOSO) results for every feature set and regressor. MAE is computed on pooled predictions (each recording weighted equally); MAE$_\mathrm{s}$ averages per-subject MAE (each subject weighted equally). Clarke A+B in \%.}\label{tab:s1}
+\begin{tabular}{llrrrrr|rrrrr}\hline
+&&\multicolumn{5}{c|}{MUST}&\multicolumn{5}{c}{STU-BA}\\
+Set&Model&MAE&MAE$_\mathrm{s}$&RMSE&$R^2$&A+B&MAE&MAE$_\mathrm{s}$&RMSE&$R^2$&A+B\\\hline
+A&Linear&14.89&15.27&19.19&$-$0.065&100.0&44.43&19.95&56.34&$-$0.018&69.6\\
+A&Ridge&14.89&15.26&19.19&$-$0.065&100.0&44.42&19.94&56.34&$-$0.018&69.6\\
+A&RF&16.59&16.20&21.98&$-$0.397&100.0&47.65&26.29&60.96&$-$0.191&70.4\\
+A&GB&18.12&18.72&23.61&$-$0.612&100.0&50.82&28.06&66.83&$-$0.432&70.4\\
+A&SVR&14.66&15.21&20.33&$-$0.196&100.0&42.83&20.08&56.90&$-$0.038&69.6\\
+B&Linear&17.64&17.18&22.40&$-$0.450&100.0&54.07&27.45&69.59&$-$0.553&67.2\\
+B&Ridge&16.88&16.63&21.20&$-$0.300&100.0&53.05&27.18&67.92&$-$0.479&67.2\\
+B&RF&16.31&16.07&19.98&$-$0.154&100.0&50.81&24.86&64.37&$-$0.328&69.6\\
+B&GB&17.35&16.16&21.63&$-$0.353&100.0&55.40&29.56&73.12&$-$0.714&68.8\\
+B&SVR&15.57&15.80&20.56&$-$0.223&100.0&42.84&16.66&56.91&$-$0.039&69.6\\
+C&Linear&18.36&17.93&23.66&$-$0.618&100.0&56.71&29.93&72.23&$-$0.673&67.2\\
+C&Ridge&17.21&17.00&21.80&$-$0.374&100.0&55.00&29.57&69.74&$-$0.559&67.2\\
+C&RF&16.70&16.64&20.56&$-$0.222&100.0&51.37&24.93&64.86&$-$0.349&69.6\\
+C&GB&16.81&16.14&21.38&$-$0.322&100.0&57.46&27.12&75.73&$-$0.839&68.0\\
+C&SVR&14.29&14.53&19.86&$-$0.141&100.0&43.08&17.61&57.21&$-$0.049&69.6\\
+\hline\multicolumn{2}{l}{Training mean}&14.71&15.09&18.93&$-$0.036&100.0&43.50&18.15&55.89&$-$0.001&69.6\\\hline\end{tabular}\end{table}
+\begin{table}[htbp]\centering\small
+\caption{Cross-dataset transfer (scaler fitted on the training dataset) and pooled LOSO over 47 subjects (a dataset indicator added to every feature set). MAE in mg/dL with subject-level cluster-bootstrap 95\% CI.}\label{tab:s2}
+\begin{tabular}{llrrrrrr}\hline
+&&\multicolumn{2}{c}{MUST$\to$STU-BA}&\multicolumn{2}{c}{STU-BA$\to$MUST}&\multicolumn{2}{c}{Pooled LOSO}\\
+Set&Model&MAE [95\% CI]&$R^2$&MAE [95\% CI]&$R^2$&MAE [95\% CI]&$R^2$\\\hline
+A&Linear&43.5 [13.8, 51.1]&$-$0.01&14.6 [11.3, 18.6]&$-$0.29&34.0 [14.7, 44.5]&$-$0.02\\
+A&Ridge&43.5 [13.8, 51.2]&$-$0.01&14.6 [11.0, 18.7]&$-$0.29&34.0 [14.5, 44.5]&$-$0.02\\
+A&RF&44.2 [16.4, 51.0]&$-$0.01&21.8 [16.8, 27.6]&$-$1.46&36.6 [19.4, 45.9]&$-$0.13\\
+A&GB&44.3 [16.2, 51.1]&$-$0.04&20.3 [15.4, 26.0]&$-$1.25&38.2 [18.8, 48.0]&$-$0.29\\
+A&SVR&43.0 [13.0, 50.5]&$-$0.01&21.1 [16.7, 26.2]&$-$1.35&32.7 [13.7, 42.6]&$-$0.03\\
+B&Linear&223.8 [171.6, 347.2]&$-$76.53&18.0 [14.4, 22.0]&$-$0.71&37.9 [17.1, 48.8]&$-$0.29\\
+B&Ridge&201.4 [156.3, 312.8]&$-$59.01&19.0 [15.1, 23.3]&$-$0.93&37.7 [16.8, 48.3]&$-$0.27\\
+B&RF&49.0 [23.0, 55.6]&$-$0.13&15.0 [12.7, 17.8]&$-$0.03&39.1 [16.8, 51.7]&$-$0.36\\
+B&GB&48.8 [21.6, 56.1]&$-$0.14&20.7 [17.2, 24.4]&$-$1.04&42.7 [18.6, 57.1]&$-$0.69\\
+B&SVR&43.5 [13.6, 51.6]&0.00&18.0 [14.0, 22.4]&$-$0.79&33.0 [13.1, 43.6]&$-$0.04\\
+C&Linear&299.5 [220.4, 533.8]&$-$180.42&20.4 [15.8, 25.3]&$-$1.25&38.3 [17.8, 50.0]&$-$0.30\\
+C&Ridge&255.4 [193.1, 426.9]&$-$119.63&22.5 [17.7, 28.3]&$-$1.59&38.1 [17.8, 49.2]&$-$0.28\\
+C&RF&49.4 [23.3, 55.8]&$-$0.13&15.6 [13.2, 18.6]&$-$0.06&38.9 [16.5, 51.3]&$-$0.35\\
+C&GB&48.4 [21.3, 55.5]&$-$0.14&25.6 [21.8, 29.4]&$-$1.47&42.5 [17.5, 57.4]&$-$0.71\\
+C&SVR&43.5 [13.6, 51.4]&0.00&17.7 [14.0, 22.1]&$-$0.74&33.0 [13.4, 43.3]&$-$0.05\\
+\hline\multicolumn{2}{l}{Training mean}&44.5 [14.4, 51.8]&$-$0.00&13.6 [10.9, 16.9]&$-$0.04&33.4 [13.5, 43.6]&$-$0.00\\\hline\end{tabular}\end{table}
+\begin{table}[htbp]\centering\small
+\caption{Temporally held-out prediction in the two STU-BA subjects with many sessions. Each session $t\ge K$ is predicted from sessions before $t$. MAE in mg/dL; Clarke A+B in \%.}\label{tab:s3}
+\begin{tabular}{llrrrr}\hline
+Subject&Method&MAE ($K=5$)&A+B ($K=5$)&MAE ($K=10$)&A+B ($K=10$)\\\hline
+S1 (n=32)&Ridge, all past sessions&88.5&40.7&74.9&40.9\\
+S1 (n=32)&Calibration mean, all past&57.4&48.1&56.8&45.5\\
+S1 (n=32)&Single feature, fixed&61.2&59.3&60.4&40.9\\
+S1 (n=32)&Single feature, reselected&100.4&51.9&48.9&50.0\\
+S2 (n=53)&Ridge, all past sessions&165.4&64.6&180.0&62.8\\
+S2 (n=53)&Calibration mean, all past&60.3&54.2&61.2&53.5\\
+S2 (n=53)&Single feature, fixed&201.1&68.8&59.1&62.8\\
+S2 (n=53)&Single feature, reselected&104.9&66.7&172.5&53.5\\
+\hline\end{tabular}\end{table}

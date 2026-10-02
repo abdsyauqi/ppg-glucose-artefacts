@@ -1,0 +1,17 @@
+\begin{table}[htbp]\centering\small
+\caption{Subgroup errors of the best LOSO model in each dataset. MAE is the mean of per-subject MAE with a subject-level bootstrap 95\% CI; $p$ is a two-sided Mann--Whitney $U$ test on per-subject MAE. All comparisons are exploratory.}\label{tab:subgroup}
+\begin{tabular}{lllrrrr}\hline
+Dataset&Factor&Level&Subjects&Recordings&MAE [95\% CI] (mg/dL)&$p$\\\hline
+MUST&Sex&Female&8&18&13.1 [9.7, 16.4]&0.87\\
+MUST&Sex&Male&15&49&15.3 [10.5, 20.7]&0.87\\
+MUST&Age&$\le$30 y&12&38&13.2 [8.7, 18.6]&0.23\\
+MUST&Age&$>$30 y&11&29&15.9 [12.0, 20.8]&0.23\\
+MUST&BMI&$<$25&16&49&12.1 [9.5, 14.8]&0.10\\
+MUST&BMI&$\ge$25&7&18&20.1 [13.1, 28.4]&0.10\\
+STU-BA&Sex&Female&4&4&21.6 [7.6, 36.0]&0.91\\
+STU-BA&Sex&Male&20&121&19.8 [13.7, 26.6]&0.91\\
+STU-BA&Age&$\le$30 y&14&109&25.9 [17.7, 35.1]&0.02\\
+STU-BA&Age&$>$30 y&10&16&11.9 [8.4, 15.3]&0.02\\
+STU-BA&BMI&$<$25&10&100&27.2 [16.3, 38.6]&0.17\\
+STU-BA&BMI&$\ge$25&14&25&15.0 [10.8, 19.6]&0.17\\
+\hline\end{tabular}\end{table}

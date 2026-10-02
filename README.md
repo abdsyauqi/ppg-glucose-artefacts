@@ -20,8 +20,10 @@ morphological feature analysis with independent-dataset replication*.
 
 ## Reproducing
 
-    pip install -r requirements.txt
-    ./run_all.sh
+```
+pip install -r requirements.txt
+./run_all.sh
+```
 
 Raw data are not included; see `data/README.md`. Every analysis from step 2 onwards runs
 from `features/`. Random seeds are fixed; bootstrap and permutation counts are set in the scripts.
